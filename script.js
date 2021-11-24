@@ -1,4 +1,8 @@
-let operator = prompt("Select your operator: add, subtract, divide, or multiply", '');
+// query selectors here
+const display = document.querySelector('#display');
+
+// good placeholder code for a basic concept... might use later, will likely delete
+/** let operator = prompt("Select your operator: add, subtract, divide, or multiply", '');
 
  switch (operator) {
     case 'add': 
@@ -41,4 +45,11 @@ function operate(operator, currentNum, nextNum) {
 
     return result;
 
-}
+} **/
+
+
+
+
+
+
+// event listeners here
