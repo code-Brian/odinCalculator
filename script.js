@@ -52,20 +52,21 @@ function divide(a, b) {
     }
 }
 
+// Updates display 
+
 // event listeners here
 // All numeric input values
 const zero = document.getElementById('zero');
 zero.addEventListener('mouseup', () => {
-    if (displayValue.charAt(0) != "0") {
-        displayValue += "0";
-    }
-    
+    let isZero = displayValue.charAt(0);
+    (isZero === "0") ? displayValue = "0" : displayValue += "0";
     display.textContent = displayValue;
 });
 
 const one = document.getElementById('one');
 one.addEventListener('mouseup', () => {
-    displayValue += "1";
+    let isZero = displayValue.charAt(0);
+    (isZero === "0") ? displayValue = "1" : displayValue += "1";
     display.textContent = displayValue;
 });
 
