@@ -1,10 +1,11 @@
-let displayValue = "0";
+let displayValue = ['0'];
 
 // query selectors here
 const display = document.querySelector('#display');
 display.textContent = displayValue;
 
 let operator;
+let numValue;
 let result = 0;
 
 function operate(operator, a, b) {
@@ -51,29 +52,31 @@ function divide(a, b) {
         throw 'Cannot divide by zero; The universe would implode.';
     }
 }
-
+let displayString;
 // Updates display 
-
+function updateDisplay(numValue) {
+    displayValue.push(numValue);
+    let displayString = displayValue.toString();
+    display.textContent = displayString;
+    return displayString;
+}
 // event listeners here
 // All numeric input values
 const zero = document.getElementById('zero');
 zero.addEventListener('mouseup', () => {
-    let isZero = displayValue.charAt(0);
-    (isZero === "0") ? displayValue = "0" : displayValue += "0";
     display.textContent = displayValue;
 });
 
 const one = document.getElementById('one');
 one.addEventListener('mouseup', () => {
-    let isZero = displayValue.charAt(0);
-    (isZero === "0") ? displayValue = "1" : displayValue += "1";
-    display.textContent = displayValue;
+    numValue = "1";
+    updateDisplay(numValue);
 });
 
 const two = document.getElementById('two');
 two.addEventListener('mouseup', () => {
-    displayValue += "2";
-    display.textContent = displayValue;
+    numValue = "2";
+    updateDisplay(numValue);
 });
 
 const three = document.getElementById('three');
@@ -161,9 +164,5 @@ equals.addEventListener('mouseup', () => {
 
 const clear = document.getElementById('clear');
 clear.addEventListener('mouseup', () => {
-    displayValue = 0;
-    a = 0;
-    b = 0;
-    operator = null;
-    display.textContent = displayValue; 
+
 });
