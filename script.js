@@ -1,4 +1,4 @@
-let displayValue = ['0'];
+let displayValue = ["0"];
 
 // query selectors here
 const display = document.querySelector('#display');
@@ -56,9 +56,10 @@ let displayString;
 // Updates display 
 function updateDisplay(numValue) {
     displayValue.push(numValue);
-    let displayString = displayValue.toString();
-    display.textContent = displayString;
-    return displayString;
+    let displayString = parseInt(displayValue.toString().replace(/,/g, ''), 10);
+    console.log(displayString);
+    console.log(typeof displayString);s
+    // display.textContent = displayValue;
 }
 // event listeners here
 // All numeric input values
