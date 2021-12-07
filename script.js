@@ -167,3 +167,8 @@ const clear = document.getElementById('clear');
 clear.addEventListener('mouseup', () => {
 
 });
+
+// this code snippet will automatically add commas as needed :)
+// function numberWithCommas(x) {
+//  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+// }
