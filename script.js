@@ -6,7 +6,7 @@ display.textContent = displayValue;
 
 let operator;
 let numValue;
-let result = 0;
+let displayNum;
 
 function operate(operator, a, b) {
 
@@ -56,16 +56,24 @@ let displayString;
 // Updates display 
 function updateDisplay(numValue) {
     displayValue.push(numValue);
-    let displayString = parseInt(displayValue.toString().replace(/,/g, ''), 10);
-    console.log(displayString);
-    console.log(typeof displayString);s
-    // display.textContent = displayValue;
+    displayNum = Number(displayValue.toString().replace(/,/g, ''));
+
+    console.log(displayNum);
+    console.log(typeof displayNum);
+
+    display.textContent = displayNum;
 }
+
+function setOperands(displayNum) {
+    return displayNum;
+}
+
 // event listeners here
 // All numeric input values
 const zero = document.getElementById('zero');
 zero.addEventListener('mouseup', () => {
-    display.textContent = displayValue;
+    numValue = "0";
+    updateDisplay(numValue);
 });
 
 const one = document.getElementById('one');
@@ -82,72 +90,73 @@ two.addEventListener('mouseup', () => {
 
 const three = document.getElementById('three');
 three.addEventListener('mouseup', () => {
-    displayValue += "3";
-    display.textContent = displayValue;
+    numValue = "3";
+    updateDisplay(numValue);
 });
 
 const four = document.getElementById('four');
 four.addEventListener('mouseup', () => {
-    displayValue += "4";
-    display.textContent = displayValue;
+    numValue = "4";
+    updateDisplay(numValue);
 });
 
 const five = document.getElementById('five');
 five.addEventListener('mouseup', () => {
-    displayValue += "5";
-    display.textContent = displayValue;
+    numValue = "5";
+    updateDisplay(numValue);
 });
 
 const six = document.getElementById('six');
 six.addEventListener('mouseup', () => {
-    displayValue += "6";
-    display.textContent = displayValue;
+    numValue = "6";
+    updateDisplay(numValue);;
 });
 
 const seven = document.getElementById('seven');
 seven.addEventListener('mouseup', () => {
-    displayValue += "7";
-    display.textContent = displayValue;
+    numValue = "7";
+    updateDisplay(numValue);
 });
 
 const eight = document.getElementById('eight');
 eight.addEventListener('mouseup', () => {
-    displayValue += "8";
-    display.textContent = displayValue;
+    numValue = "8";
+    updateDisplay(numValue);
 });
 
 const nine = document.getElementById('nine');
 nine.addEventListener('mouseup', () => {
-    displayValue += "9";
-    display.textContent = displayValue;
+    numValue = "9";
+    updateDisplay(numValue);
 });
 
 //operator value inputs
 const divChar = document.getElementById('divide');
 divChar.addEventListener('mouseup', () => {
-    displayValue = '÷';
-    display.textContent = displayValue;
+    operatorValue = '÷';
+    operator = 'divide';
+    display.textContent = operatorValue;
 });
 
 const multChar = document.getElementById('multiply');
 multChar.addEventListener('mouseup', () => {
-    displayValue = '×';
+    operatorValue = '×';
     operator = 'multiply';
-    display.textContent = displayValue;
+    display.textContent = operatorValue;
 });
 
 const subtChar = document.getElementById('subtract');
 subtChar.addEventListener('mouseup', () => {
-    displayValue = '−';
+    operatorValue = '−';
     operator = 'subtract';
-    display.textContent = displayValue;
+    display.textContent = operatorValue;
 });
 
 const addChar = document.getElementById('add');
 addChar.addEventListener('mouseup', () => {
-    displayValue = '+';
+    operatorValue = '+';
     operator = 'add';
-    display.textContent = displayValue;
+    display.textContent = operatorValue;
 });
 
 const deciChar = document.getElementById('decimal');
@@ -172,3 +181,5 @@ clear.addEventListener('mouseup', () => {
 // function numberWithCommas(x) {
 //  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 // }
+
+// for rounding, keep toFixed() in mind as a possibility
