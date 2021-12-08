@@ -52,6 +52,24 @@ function divide(a, b) {
         throw 'Cannot divide by zero; The universe would implode.';
     }
 }
+
+let operands = [];
+
+function clearDisplayValue() {
+    displayValue = [];
+    return displayValue;
+}
+
+function clearDisplayNum() {
+    displayNum = 0;
+    return displayNum;
+}
+
+function setOperands(displayNum) {
+    operands.push(displayNum);
+    return operands;
+}
+
 let displayString;
 // Updates display 
 function updateDisplay(numValue) {
@@ -62,10 +80,6 @@ function updateDisplay(numValue) {
     console.log(typeof displayNum);
 
     display.textContent = displayNum;
-}
-
-function setOperands(displayNum) {
-    return displayNum;
 }
 
 // event listeners here
@@ -81,6 +95,7 @@ one.addEventListener('mouseup', () => {
     numValue = "1";
     updateDisplay(numValue);
 });
+    // event listeners here
 
 const two = document.getElementById('two');
 two.addEventListener('mouseup', () => {
@@ -136,6 +151,8 @@ divChar.addEventListener('mouseup', () => {
     operatorValue = '÷';
     operator = 'divide';
     display.textContent = operatorValue;
+    setOperands(displayNum);
+    clearDisplayNum();
 });
 
 const multChar = document.getElementById('multiply');
@@ -143,6 +160,9 @@ multChar.addEventListener('mouseup', () => {
     operatorValue = '×';
     operator = 'multiply';
     display.textContent = operatorValue;
+    setOperands(displayNum);
+    clearDisplayNum();
+    clearDisplayValue();
 });
 
 const subtChar = document.getElementById('subtract');
@@ -150,6 +170,7 @@ subtChar.addEventListener('mouseup', () => {
     operatorValue = '−';
     operator = 'subtract';
     display.textContent = operatorValue;
+    setOperands(displayNum)
 });
 
 const addChar = document.getElementById('add');
@@ -157,6 +178,9 @@ addChar.addEventListener('mouseup', () => {
     operatorValue = '+';
     operator = 'add';
     display.textContent = operatorValue;
+    setOperands(displayNum)
+    clearDisplayNum();
+    clearDisplayValue();
 });
 
 const deciChar = document.getElementById('decimal');
