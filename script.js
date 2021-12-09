@@ -53,6 +53,11 @@ function divide(a, b) {
     }
 }
 
+function clearDisplayArrays() {
+    clearDisplayValue();
+    clearDisplayNum();
+}
+
 let operands = [];
 
 function clearDisplayValue() {
@@ -161,8 +166,7 @@ multChar.addEventListener('mouseup', () => {
     operator = 'multiply';
     display.textContent = operatorValue;
     setOperands(displayNum);
-    clearDisplayNum();
-    clearDisplayValue();
+    clearDisplayArrays();
 });
 
 const subtChar = document.getElementById('subtract');
@@ -179,19 +183,20 @@ addChar.addEventListener('mouseup', () => {
     operator = 'add';
     display.textContent = operatorValue;
     setOperands(displayNum)
-    clearDisplayNum();
-    clearDisplayValue();
+    clearDisplayArrays();
 });
 
 const deciChar = document.getElementById('decimal');
 deciChar.addEventListener('mouseup', () => {
-    displayValue = '∙';
+    displayValue = '∙';    clearDisplayNum();
+    clearDisplayValue();
     // will add operator later
     display.textContent = displayValue;
 })
 
 const equals = document.getElementById('equals');
 equals.addEventListener('mouseup', () => {
+    setOperands(displayNum);
     operate(operator, a, b);
     display.textContent = result;
 })
