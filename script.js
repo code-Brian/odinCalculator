@@ -162,7 +162,7 @@ divChar.addEventListener('mouseup', () => {
     operator = 'divide';
     display.textContent = operatorValue;
     setOperandValues(displayNum);
-    clearDisplayNum();
+    clearDisplayArrays();
 });
 
 const multChar = document.getElementById('multiply');
@@ -180,6 +180,7 @@ subtChar.addEventListener('mouseup', () => {
     operator = 'subtract';
     display.textContent = operatorValue;
     setOperandValues(displayNum);
+    clearDisplayArrays();
 });
 
 const addChar = document.getElementById('add');
@@ -201,7 +202,7 @@ deciChar.addEventListener('mouseup', () => {
 
 const equals = document.getElementById('equals');
 equals.addEventListener('mouseup', () => {
-    setOperands(displayNum);
+    setOperandValues(displayNum);
     placeOperands(operands);
     operate(operator, a, b);
     display.textContent = result;
