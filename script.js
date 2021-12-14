@@ -70,9 +70,14 @@ function clearDisplayNum() {
     return displayNum;
 }
 
-function setOperands(displayNum) {
+function setOperandValues(displayNum) {
     operands.push(displayNum);
     return operands;
+}
+
+function placeOperands(operands) {
+    a = operands[0];
+    b = operands[1]; 
 }
 
 let displayString;
@@ -156,7 +161,7 @@ divChar.addEventListener('mouseup', () => {
     operatorValue = '÷';
     operator = 'divide';
     display.textContent = operatorValue;
-    setOperands(displayNum);
+    setOperandValues(displayNum);
     clearDisplayNum();
 });
 
@@ -165,7 +170,7 @@ multChar.addEventListener('mouseup', () => {
     operatorValue = '×';
     operator = 'multiply';
     display.textContent = operatorValue;
-    setOperands(displayNum);
+    setOperandValues(displayNum);
     clearDisplayArrays();
 });
 
@@ -174,7 +179,7 @@ subtChar.addEventListener('mouseup', () => {
     operatorValue = '−';
     operator = 'subtract';
     display.textContent = operatorValue;
-    setOperands(displayNum)
+    setOperandValues(displayNum);
 });
 
 const addChar = document.getElementById('add');
@@ -182,7 +187,7 @@ addChar.addEventListener('mouseup', () => {
     operatorValue = '+';
     operator = 'add';
     display.textContent = operatorValue;
-    setOperands(displayNum)
+    setOperandValues(displayNum)
     clearDisplayArrays();
 });
 
@@ -197,6 +202,7 @@ deciChar.addEventListener('mouseup', () => {
 const equals = document.getElementById('equals');
 equals.addEventListener('mouseup', () => {
     setOperands(displayNum);
+    placeOperands(operands);
     operate(operator, a, b);
     display.textContent = result;
 })
