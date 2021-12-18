@@ -8,6 +8,7 @@ let operator;
 let numValue;
 let displayNum;
 
+
 function operate(operator, a, b) {
 
     switch(operator) {
@@ -72,12 +73,23 @@ function clearDisplayNum() {
 
 function setOperandValues(displayNum) {
     operands.push(displayNum);
-    return operands;
+    // return operands;
 }
 
 function placeOperands(operands) {
     a = operands[0];
     b = operands[1]; 
+}
+
+function clearOperands() {
+   for (let i = 0; i <= operands.length; i++) {
+        operands.pop();
+    }
+}
+function continueResult(result) {
+    clearOperands();
+    operands.push(result);
+    placeOperands(operands);
 }
 
 let displayString;
@@ -206,7 +218,8 @@ equals.addEventListener('mouseup', () => {
     placeOperands(operands);
     operate(operator, a, b);
     display.textContent = result;
-})
+    continueResult(result);
+});
 
 const clear = document.getElementById('clear');
 clear.addEventListener('mouseup', () => {
