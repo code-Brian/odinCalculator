@@ -1,4 +1,4 @@
-let displayValue = ["0"];
+let displayValue = [0];
 
 // query selectors here
 const display = document.querySelector('#display');
@@ -73,7 +73,6 @@ function clearDisplayNum() {
 
 function setOperandValues(displayNum) {
     operands.push(displayNum);
-    // return operands;
 }
 
 function placeOperands(operands) {
@@ -88,8 +87,9 @@ function clearOperands() {
 }
 function continueResult(result) {
     clearOperands();
-    operands.push(result);
-    placeOperands(operands);
+    updateDisplay(result);
+    setOperandValues(displayNum);
+    clearDisplayArrays();
 }
 
 let displayString;
@@ -97,7 +97,7 @@ let displayString;
 function updateDisplay(numValue) {
     displayValue.push(numValue);
     displayNum = Number(displayValue.toString().replace(/,/g, ''));
-
+    
     console.log(displayNum);
     console.log(typeof displayNum);
 
@@ -108,62 +108,62 @@ function updateDisplay(numValue) {
 // All numeric input values
 const zero = document.getElementById('zero');
 zero.addEventListener('mouseup', () => {
-    numValue = "0";
+    numValue = 0;
     updateDisplay(numValue);
 });
 
 const one = document.getElementById('one');
 one.addEventListener('mouseup', () => {
-    numValue = "1";
+    numValue = 1;
     updateDisplay(numValue);
 });
     // event listeners here
 
 const two = document.getElementById('two');
 two.addEventListener('mouseup', () => {
-    numValue = "2";
+    numValue = 2;
     updateDisplay(numValue);
 });
 
 const three = document.getElementById('three');
 three.addEventListener('mouseup', () => {
-    numValue = "3";
+    numValue = 3;
     updateDisplay(numValue);
 });
 
 const four = document.getElementById('four');
 four.addEventListener('mouseup', () => {
-    numValue = "4";
+    numValue = 4;
     updateDisplay(numValue);
 });
 
 const five = document.getElementById('five');
 five.addEventListener('mouseup', () => {
-    numValue = "5";
+    numValue = 5;
     updateDisplay(numValue);
 });
 
 const six = document.getElementById('six');
 six.addEventListener('mouseup', () => {
-    numValue = "6";
+    numValue = 6;
     updateDisplay(numValue);;
 });
 
 const seven = document.getElementById('seven');
 seven.addEventListener('mouseup', () => {
-    numValue = "7";
+    numValue = 7;
     updateDisplay(numValue);
 });
 
 const eight = document.getElementById('eight');
 eight.addEventListener('mouseup', () => {
-    numValue = "8";
+    numValue = 8;
     updateDisplay(numValue);
 });
 
 const nine = document.getElementById('nine');
 nine.addEventListener('mouseup', () => {
-    numValue = "9";
+    numValue = 9;
     updateDisplay(numValue);
 });
 
