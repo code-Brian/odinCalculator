@@ -2,7 +2,12 @@ let displayValue = ["0"];
 
 // query selectors here
 const display = document.querySelector('#display');
+const numButtons = document.querySelectorAll('[data-number]');
 display.textContent = displayValue;
+
+numButtons.forEach((button) =>
+    button.addEventListener(click, () => appendNumber(button.textContent))   
+)
 
 let operator;
 let numValue;
@@ -92,68 +97,7 @@ function updateDisplay(numValue) {
     display.textContent = displayNum;
 }
 
-// event listeners here
 // All numeric input values
-const zero = document.getElementById('zero');
-zero.addEventListener('mouseup', () => {
-    numValue = "0";
-    updateDisplay(numValue);
-});
-
-const one = document.getElementById('one');
-one.addEventListener('mouseup', () => {
-    numValue = "1";
-    updateDisplay(numValue);
-});
-    // event listeners here
-
-const two = document.getElementById('two');
-two.addEventListener('mouseup', () => {
-    numValue = "2";
-    updateDisplay(numValue);
-});
-
-const three = document.getElementById('three');
-three.addEventListener('mouseup', () => {
-    numValue = "3";
-    updateDisplay(numValue);
-});
-
-const four = document.getElementById('four');
-four.addEventListener('mouseup', () => {
-    numValue = "4";
-    updateDisplay(numValue);
-});
-
-const five = document.getElementById('five');
-five.addEventListener('mouseup', () => {
-    numValue = "5";
-    updateDisplay(numValue);
-});
-
-const six = document.getElementById('six');
-six.addEventListener('mouseup', () => {
-    numValue = "6";
-    updateDisplay(numValue);;
-});
-
-const seven = document.getElementById('seven');
-seven.addEventListener('mouseup', () => {
-    numValue = "7";
-    updateDisplay(numValue);
-});
-
-const eight = document.getElementById('eight');
-eight.addEventListener('mouseup', () => {
-    numValue = "8";
-    updateDisplay(numValue);
-});
-
-const nine = document.getElementById('nine');
-nine.addEventListener('mouseup', () => {
-    numValue = "9";
-    updateDisplay(numValue);
-});
 
 //operator value inputs
 const divChar = document.getElementById('divide');

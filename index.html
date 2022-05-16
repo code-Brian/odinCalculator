@@ -9,26 +9,32 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="grid-container">
-        <div class="grid-item" id="display"></div>
-        <button class="grid-item" id="clear">C</button>
-        <button class="grid-item" id="backspace">⌫</button>
-        <button class="grid-item" id="divide">&#247;</button>
-        <button class="grid-item" id="multiply">&#215;</button>
-        <button class="grid-item" id="seven">7</button>
-        <button class="grid-item" id="eight">8</button>
-        <button class="grid-item" id="nine">9</button>
-        <button class="grid-item" id="subtract">&#8722;</button>
-        <button class="grid-item" id="four">4</button>
-        <button class="grid-item" id="five">5</button>
-        <button class="grid-item" id="six">6</button>
-        <button class="grid-item" id="add">&#43;</button>
-        <button class="grid-item" id="one">1</button>
-        <button class="grid-item" id="two">2</button>
-        <button class="grid-item" id="three">3</button>
-        <button class="grid-item" id="equals">&#61;</button>
-        <button class="grid-item" id="zero">0</button>
-        <button class="grid-item" id="decimal">&#8729;</button>
-    </div>
+    <main>
+        <div class="screen">0</div>
+        <div class="btn-grid">
+            <button class="btn" id="clearBtn">C</button> <!-- Need a new class for input into function CLEAR -->
+            <button class="btn" id="deleteBtn">⌫</button> <!-- Need a new class for input into function Backspace button -->
+            <button class="btn" data-operator>&#247;</button> <!-- divide -->
+            <button class="btn" data-operator>&#215;</button> <!-- multiply -->
+    
+            <button class="btn" data-number>7</button>
+            <button class="btn" data-number>8</button>
+            <button class="btn" data-number>9</button>
+            <button class="btn" data-operator>&#8722;</button> <!-- subtract -->
+    
+            <button class="btn" data-number>4</button>
+            <button class="btn" data-number>5</button>
+            <button class="btn" data-number>6</button>
+            <button class="btn" data-operator>&#43;</button> <!-- add -->
+    
+            <button class="btn" data-number>1</button>
+            <button class="btn" data-number>2</button>
+            <button class="btn" data-number>3</button>
+            <button class="btn" id="equalsBtn">&#61;</button> <!-- equals -->
+    
+            <button class="btn" data-number>0</button>
+            <button class="btn" id="decimalBtn">&#8729;</button> <!-- decimal -->
+        </div>
+    </main>
 </body>
 </html>
