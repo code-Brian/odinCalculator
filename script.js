@@ -29,7 +29,7 @@ function operate(operator, a, b) {
 
 } 
 
-function add(a,b) {
+function add(a,b) { 
     let sum = a + b;
     return sum;
 }
@@ -219,3 +219,5 @@ clear.addEventListener('mouseup', () => {
 // }
 
 // for rounding, keep toFixed() in mind as a possibility
+
+// Test comment for git push
