@@ -3,6 +3,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    background-color: darkkhaki;
 }
 
 .grid-container {
@@ -10,14 +11,21 @@ body {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: auto;
     padding: 16px;
-    border: 1px solid black;
+    border: 5px solid black;
+    border-radius: 15px;
+    background-image: linear-gradient(whitesmoke,darkgray);
 }
 
+
 .grid-item {
+    margin: 6px;
     padding: 16px;
     font-size: 16px;
     text-align: center;
-    outline: 1px solid gray;
+    border: 1px solid gray;
+    border-radius: 5px;
+    outline-style: ridge;
+
 }
 
 #display {
@@ -27,6 +35,7 @@ body {
     min-height: 50px;
     grid-column: 1 / 5;
     grid-row: 1 / 5;
+    background-color: white;
 }
 
 #clear {

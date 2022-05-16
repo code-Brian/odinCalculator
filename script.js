@@ -219,5 +219,3 @@ clear.addEventListener('mouseup', () => {
 // }
 
 // for rounding, keep toFixed() in mind as a possibility
-
-// Test comment for git push
