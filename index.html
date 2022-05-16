@@ -9,31 +9,37 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <main>
-        <div class="screen">0</div>
-        <div class="btn-grid">
-            <button class="btn" id="clearBtn">C</button> <!-- Need a new class for input into function CLEAR -->
-            <button class="btn" id="deleteBtn">⌫</button> <!-- Need a new class for input into function Backspace button -->
-            <button class="btn" data-operator>&#247;</button> <!-- divide -->
-            <button class="btn" data-operator>&#215;</button> <!-- multiply -->
-    
-            <button class="btn" data-number>7</button>
-            <button class="btn" data-number>8</button>
-            <button class="btn" data-number>9</button>
-            <button class="btn" data-operator>&#8722;</button> <!-- subtract -->
-    
-            <button class="btn" data-number>4</button>
-            <button class="btn" data-number>5</button>
-            <button class="btn" data-number>6</button>
-            <button class="btn" data-operator>&#43;</button> <!-- add -->
-    
-            <button class="btn" data-number>1</button>
-            <button class="btn" data-number>2</button>
-            <button class="btn" data-number>3</button>
-            <button class="btn" id="equalsBtn">&#61;</button> <!-- equals -->
-    
-            <button class="btn" data-number>0</button>
-            <button class="btn" id="decimalBtn">&#8729;</button> <!-- decimal -->
+    <main class="main">
+        <div class="calculator">
+            <div class="screen">
+                <div id="previousOperationScreen" class="screen-last"></div>
+                <div id="currentOperationScreen" class="screen-current">0</div>
+            </div>
+            <div class="btn-grid">
+                <button id="clearBtn" class="top-btn btn">C</button> <!-- Need a new class for input into function CLEAR -->
+                <button id="deleteBtn" class="top-btn btn">⌫</button> <!-- Need a new class for input into function Backspace button -->
+                
+                <button class="btn" data-number>7</button>
+                <button class="btn" data-number>8</button>
+                <button class="btn" data-number>9</button>
+                <button class="btn" data-operator>&#247;</button> <!-- divide -->
+
+        
+                <button class="btn" data-number>4</button>
+                <button class="btn" data-number>5</button>
+                <button class="btn" data-number>6</button>
+                <button class="btn" data-operator>&#215;</button> <!-- multiply -->
+        
+                <button class="btn" data-number>1</button>
+                <button class="btn" data-number>2</button>
+                <button class="btn" data-number>3</button>
+                <button class="btn" data-operator>&#8722;</button> <!-- subtract -->
+
+                <button id="decimalBtn" class="btn">&#8729;</button> <!-- decimal -->
+                <button class="btn" data-number>0</button>
+                <button id="equalsBtn" class="btn">&#61;</button> <!-- equals -->
+                <button class="btn" data-operator>&#43;</button> <!-- add -->
+            </div>
         </div>
     </main>
 </body>
