@@ -45,7 +45,6 @@ function clear() {
 function appendNumber(number) {
     if (currentOperationScreen.textContent === '0' || shouldResetScreen) resetScreen()
     currentOperationScreen.textContent += number
-    console.log(currentOperationScreen.textContent)
   }
 
 function appendDecimal() {
