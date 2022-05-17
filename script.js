@@ -27,11 +27,13 @@ operatorButtons.forEach((button) =>
 );
 
 function appendDecimal() {
-
+    currentOperationScreen.textContent += ".";
 }
 
 function deleteNumber() {
-    // placeholder code
+    currentOperationScreen.textContent = currentOperationScreen.textContent
+        .toString()
+        .slice(0,-1);
 }
 
 function clear() {
@@ -62,7 +64,9 @@ function evaluate() {
         return
     }
     secondOperand = currentOperationScreen.textContent;
-    currentOperationScreen.textContent = operate(currentOperation, firstOperand, secondOperand);
+    currentOperationScreen.textContent = roundResult(
+        operate(currentOperation, firstOperand, secondOperand)
+    );
     previousOperationScreen.textContent = `${firstOperand} ${currentOperation} ${secondOperand} =`
     currentOperation = null;
 }
@@ -71,6 +75,11 @@ function resetScreen() {
     currentOperationScreen.textContent = '';
     shouldResetScreen = false;
 }
+
+function roundResult(number) {
+    return Math.round(number * 100) / 100;
+}
+
 function operate(operator, a, b) {
     a = Number(a);
     b = Number(b);
