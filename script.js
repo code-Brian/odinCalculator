@@ -26,9 +26,7 @@ operatorButtons.forEach((button) =>
     button.addEventListener('click', () => setOperation(button.textContent))
 );
 
-function appendDecimal() {
-    currentOperationScreen.textContent += ".";
-}
+
 
 function deleteNumber() {
     currentOperationScreen.textContent = currentOperationScreen.textContent
@@ -43,11 +41,20 @@ function clear() {
     secondOperand = '';
     currentOperation = null;
 }
+
 function appendNumber(number) {
     if (currentOperationScreen.textContent === '0' || shouldResetScreen) resetScreen()
     currentOperationScreen.textContent += number
     console.log(currentOperationScreen.textContent)
   }
+
+function appendDecimal() {
+    if (shouldResetScreen) resetScreen();
+    if(currentOperationScreen.textContent === '') 
+        currentOperationScreen.textContent = '0';
+    if (currentOperationScreen.textContent.includes(".")) return;
+    currentOperationScreen.textContent += ".";
+}
 
 function setOperation(operator) {
     if (currentOperation !== null) evaluate();
@@ -113,10 +120,3 @@ function multiply(a,b) {
 function divide(a, b) {
     return a / b;
 }
-
-// this code snippet will automatically add commas as needed :)
-// function numberWithCommas(x) {
-//  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-// }
-
-// for rounding, keep toFixed() in mind as a possibility
