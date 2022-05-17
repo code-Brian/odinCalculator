@@ -1,9 +1,17 @@
+
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: darkkhaki;
+    background-color: rgb(32, 32, 32);
+    background-image: 
+        linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black), 
+        linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black),
+        linear-gradient(to bottom, rgb(8, 8, 8), 
+        rgb(32, 32, 32));
+    background-size: 10px 10px, 10px 10px, 10px 5px;
+    background-position: 0px 0px, 5px 5px, 0px 0px;
 }
 
 .main {
@@ -28,8 +36,9 @@ body {
 
 .screen {
     padding: 10px 20px;
-    border: 2px solid black;
+    border: 2px solid darkgray;
     border-radius: 5px;
+    outline-style: ridge;
     margin-bottom: 20px;
     background-color: white;
     text-align: right;
@@ -64,4 +73,5 @@ body {
     text-align: center;
     border: 1px solid darkgray;
     border-radius: 5px;
+    outline-style: ridge;
 }
